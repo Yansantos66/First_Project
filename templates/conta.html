@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/static/css/styles.css" />
+
+    <title>Cadastramento</title>
+</head>
+
+<body>
+    <header class="header">
+        <img src="/static/img/pagbank-logo.gif">
+        <h1><class="title"></h1>
+        <nav>
+        <a href="https://pagseguro.uol.com.br">PagBank</a>
+        </nav>
+        <nav>
+            <a href="https://www.uol.com.br">Uol</a>
+        </nav>
+        <nav>
+            <a href="https://blog.pagseguro.uol.com.br/canais-atendimento-pagseguro/">Contact us</a>
+        </nav>
+    </header>
+    <header>
+        <div class="head">
+            <!--head-->
+            <H1>CRIE SUA CONTA</H1>
+        </div>
+        <div class="mensage">
+            <!--mensage-->
+            <h1>Vamos iniciar seu cadastro para abrir sua conta, para isso nos informe:</h1>
+        </div>
+        <div class="text">
+            <form action="{{ url_for('cadastro') }}" method="post">
+                <div class="name">
+                    <label for="Nome">NOME:</label>
+                    <input type="text" name="nome" pattern="[a-zA-Z\s]+$" title="Incorreto, insira somente letras!" placeholder="Digite seu nome..."></div>                     
+                    <div class="cpclient">
+                    <label for="cpf">CPF:</label>
+                    <input type="text" name="cpf" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" title="Incorreto, insira somente números e formatado conforme o CPF" placeholder="Digite seu CPF..."></div>
+                    <div class="datclient">
+                    <label for="data">DATA DE NASCIMENTO:
+                    <input type="date" name="data" value="" placeholder="digite sua idade..."></div>
+                    <div class="celphone">
+                    <label for="celular">CELULAR:</label>
+                    <input type="int" name="celular" pattern="^\(?[1-9]{2}\)? ?(?:[2-8]|9[1-9])[0-9]{3}\-?[0-9]{4}$" title="Incorreto, insira somente números formatado conforme número de celular" placeholder="digite seu número de celular..."></div>
+                    <div class="button">
+                    <button type="submit" class="button"><i></i>Cadastrar</button></div>
+                    {% with messages = get_flashed_messages() %}
+                    {% if messages %}
+                    <ul class="flashes">
+                    {% for message in messages %}
+                            <li>{{ message }}</li>
+                    {% endfor %}
+                    </ul>
+                    {% endif %}
+                    {% endwith %}  
+                </form>
+                <div class="img">
+                    <img src="/static/img/logo-pagseguro-small.svg">
+                    <img src="/static/img/thumbnail_image001_pags.png">
+                    <img src="/static/img/new-uol-logo.svg">
+            </header>
+        </div>
+        <header>
+        </header>
+    </div>
+</header>
+</body>
+</html>
