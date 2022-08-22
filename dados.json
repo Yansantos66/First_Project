@@ -1,0 +1,20 @@
+[
+    {
+        "nome": "Yan Santos",
+        "cpf": "123.456.789-10",
+        "datadenascimento": "2003-11-14",
+        "celular": "(11) 12345-6789"
+    },
+    {
+        "nome": "Matheus Silva",
+        "cpf": "987.654.321-10",
+        "datadenascimento": "2000-08-17",
+        "celular": "(11) 6789-12345"
+    },
+    {
+        "nome": "Jose Carlos ",
+        "cpf": "779.331.449-26",
+        "data": "1999-04-27",
+        "celular": "(12) 87962-5162"
+    }
+]

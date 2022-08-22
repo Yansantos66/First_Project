@@ -35,16 +35,16 @@
             <form action="{{ url_for('cadastro') }}" method="post">
                 <div class="name">
                     <label for="Nome">NOME:</label>
-                    <input type="text" name="nome" pattern="[a-zA-Z\s]+$" title="Incorreto, insira somente letras!" placeholder="Digite seu nome..."></div>                     
+                    <input type="text" name="nome" pattern="[a-zA-Z\s]+$" title="Incorreto, insira somente letras!"  placeholder="Digite seu nome..." required></div>                     
                     <div class="cpclient">
                     <label for="cpf">CPF:</label>
-                    <input type="text" name="cpf" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" title="Incorreto, insira somente números e formatado conforme o CPF" placeholder="Digite seu CPF..."></div>
+                    <input type="text" name="cpf" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" title="Incorreto, insira somente números e formatado conforme o CPF" placeholder="Digite seu CPF..." required></div>
                     <div class="datclient">
                     <label for="data">DATA DE NASCIMENTO:
-                    <input type="date" name="data" value="" placeholder="digite sua idade..."></div>
+                    <input type="date" name="data" value="" placeholder="digite sua idade..." required></div>
                     <div class="celphone">
                     <label for="celular">CELULAR:</label>
-                    <input type="int" name="celular" pattern="^\(?[1-9]{2}\)? ?(?:[2-8]|9[1-9])[0-9]{3}\-?[0-9]{4}$" title="Incorreto, insira somente números formatado conforme número de celular" placeholder="digite seu número de celular..."></div>
+                    <input type="int" name="celular" pattern="^\(?[1-9]{2}\)? ?(?:[2-8]|9[1-9])[0-9]{3}\-?[0-9]{4}$" title="Incorreto, insira somente números formatado conforme número de celular" placeholder="digite seu número de celular..." required></div>
                     <div class="button">
                     <button type="submit" class="button"><i></i>Cadastrar</button></div>
                     {% with messages = get_flashed_messages() %}
@@ -60,7 +60,8 @@
                 <div class="img">
                     <img src="/static/img/logo-pagseguro-small.svg">
                     <img src="/static/img/thumbnail_image001_pags.png">
-                    <img src="/static/img/new-uol-logo.svg">
+                    <img src="/static/img/new-uol-logo.svg"></div>
+                </div>
             </header>
         </div>
         <header>

@@ -1,26 +1,13 @@
 import requests
-from re import A
-from flask import Flask, render_template, request, url_for, json, flash, redirect
+from flask import Flask, render_template, request, url_for, flash, redirect
 from datetime import datetime, timedelta
-
+import json
 #Framework
 #Lista de dicionários 
-#Percorrer lista
-#Verificar igualdade e gerar conflito
-clientes = [
-    {
-        "nome": "Yan Santos",
-        "cpf": "123.456.789-12",
-        "data": "2004-08-12",
-        "celular": "(11)+12345-6789",
-    },
-    {
-        "nome": "Yan Santos",
-        "cpf": "123.456.789-12",
-        "data": "2004-08-12",
-        "celular": "(11)+12345-6789",
-    },
-]
+with open('dados.json') as jsonfile:    #Leitura do arquivo Json 
+    clientes = json.load(jsonfile)
+
+
 app = Flask(__name__)
 app.config["SECRET_KEY"] = "key_secret"
 
@@ -37,18 +24,26 @@ def homepage():
 # Caso houver uma ação esperada continuar o code
 
 
-@app.route("/cadastramento", methods=["POST", "GET"])
+@app.route("/cadastramento", methods=["POST", "GET"])             #Criar um dado/atualizar  #Pegar informação
 def cadastro():
     ncliente = request.form.get("nome")
-    if request.method == "POST":
-        ncliente = request.form["nome"]
-        cpfcliente = request.form["cpf"]
+    if request.method == "POST":        #Verificando o metodo
+        
+        ncliente = request.form["nome"]         #Pegando informações do cliente(FRONT-END)
+        cpfcliente = request.form["cpf"]        
         datcliente = request.form["data"]
         celcliente = request.form["celular"]
-        data_minima = datetime.now() - timedelta(days=18 * 365)
-        idade_cliente = datetime.strptime(datcliente, "%Y-%m-%d")#formato de data
+
+        data_minima = datetime.now() - timedelta(days=18 * 365)     #Calculo
+        idade_cliente = datetime.strptime(datcliente, "%Y-%m-%d")   #formato de data
         idade_permitida = idade_cliente < data_minima 
-        if idade_permitida:
+        
+        for cliente in clientes:                                                            #Percorrer lista
+                if cliente ["cpf"] == cpfcliente or cliente["celular"] == celcliente:       #Verificar igualdade e gerar conflito
+                    flash("Cliente já cadastrado")
+                    return render_template("conta.html") 
+        
+        if idade_permitida:   
             clientes.append(
                 {
                     "nome": ncliente,
@@ -57,6 +52,10 @@ def cadastro():
                     "celular": celcliente,
                 }
             )
+        
+            with open('dados.json', 'w') as jsonadd:        #adicionar dados no Json 
+                json.dump(clientes, jsonadd, indent=4)
+
             flash("Cliente cadastrado com sucesso. Agora você faz parte do time PagBank PagSeguro!")
         else:
             flash("Vimos que você ainda é menor de idade e por isso, não conseguimos prosseguir com seu cadastro.")
@@ -70,27 +69,6 @@ if __name__ == "__main__":
         {"nome": "", "cpf": "", "data": "", "celular": ""},
         {"nome": "", "cpf": "", "data": "", "celular": ""},
     ]
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
