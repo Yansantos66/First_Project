@@ -4,7 +4,7 @@
     border: none;
 }
 html, body{
-    background: linear-gradient(#e9f6fc,#8ef7ff);
+    background: linear-gradient(#e2f582,#08daff);
     overflow-y: hidden;
     overflow-x: hidden;
 }
@@ -105,12 +105,7 @@ input, select{
     padding-top: 20px;
 }
 .img{
-    padding-top: 250px;
-    width: 80px;
-}
-.poster{
-    text-align: right;
-    padding-bottom: 1000px;
+    padding-top: 20rem;
 }
 
 
