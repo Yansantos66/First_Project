@@ -1,18 +1,22 @@
-*{
+* {
     margin: 0;
     padding: 0;
     border: none;
 }
-html, body{
-    background: linear-gradient(#e2f582,#08daff);
+
+html,
+body {
+    background: linear-gradient(#e2f582, #08daff);
     overflow-y: hidden;
     overflow-x: hidden;
 }
-.header nav a{
+
+.header nav a {
     display: flex;
     gap: 95rem;
     color: white;
 }
+
 .header {
     align-items: left;
     background-color: #2f2d39;
@@ -22,19 +26,24 @@ html, body{
     grid-template-columns: min-content auto min-content;
     padding: 1rem;
 }
-body, input, select {
+
+body,
+input,
+select {
     font-size: 1rem;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     text-align: left;
 }
-.head{ 
+
+.head {
     font-size: 20px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     text-align: center;
     padding-top: 20px;
     width: 100%;
 }
-.mensage{
+
+.mensage {
     padding-left: 10px;
     padding-top: 40px;
     font-size: 10px;
@@ -42,7 +51,8 @@ body, input, select {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: black;
 }
-.text{
+
+.text {
     padding-top: 20px;
     padding-left: 10px;
     color: black;
@@ -50,13 +60,17 @@ body, input, select {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     height: 60rem;
 }
-.input{
+
+.input {
     padding-top: 10px;
 }
+
 name-input {
     min-width: 35rem;
 }
-input, select{
+
+input,
+select {
     width: 420px;
     height: 40px;
     padding: 1rem;
@@ -65,31 +79,35 @@ input, select{
     border: 2px inset rgb(8, 8, 8);
     background-color: #FFF;
 }
-.name{
+
+.name {
     padding-top: 5px;
     text-align: left;
     padding-left: 10px;
 }
-.cpclient{
+
+.cpclient {
     padding-top: 15px;
     text-align: left;
     padding-left: 10px;
 }
-.datclient{
+
+.datclient {
     padding-top: 15px;
     text-align: left;
     padding-left: 10px;
 }
-.celphone{
+
+.celphone {
     padding-top: 15px;
     text-align: left;
     padding-left: 10px;
     padding-bottom: 15px;
 }
 
-.button{
+.button {
     border-color: white;
-    border-radius:50px;
+    border-radius: 50px;
     color:white; 
     background-color: black;
     cursor: pointer;
@@ -100,10 +118,21 @@ input, select{
     font-size: 40px;
     padding-left: 35px;
     text-transform: uppercase;
+
 }
-.flashes{
+
+.button:hover {
+    width: 20%;
+    position: relative;
+    background: linear-gradient(#464343, #534c4c);
+  
+}
+
+.flashes {
     padding-top: 20px;
 }
-.img{
+
+.img {
     padding-top: 20rem;
+    position: relative;
 }
