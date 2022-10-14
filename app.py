@@ -47,7 +47,7 @@ def cadastro():
 
             flash("Cliente cadastrado com sucesso. Agora você faz parte do time PagBank PagSeguro!")
         else:
-            flash("Vimos que você ainda é menor de idade e por isso, não conseguimos prosseguir com seu cadastro.")
+            flash("Analisamos que você ainda não tem idade mínima permitida, e por isso não podemos prosseguir com seu cadastro.")
     return render_template("conta.html")
 
 if __name__ == "__main__":
