@@ -23,7 +23,8 @@
         </nav>
     </header>
     <header>
-        <div class="head"><!--head-->
+        <div class="head">
+            <!--head-->
             <H1>CRIE SUA CONTA</H1>
         </div>
         <div class="mensage">
@@ -45,7 +46,7 @@
                     <label for="celular">CELULAR:</label>
                     <input type="int" name="celular" pattern="^\(?[1-9]{2}\)? ?(?:[2-8]|9[1-9])[0-9]{3}\-?[0-9]{4}$" title="Incorreto, insira somente números formatado conforme número de celular" placeholder="digite seu número de celular..." required></div>
                     <div class="button">
-                    <button type="submit" class="button"><i></i>Cadastrar</button></div>
+                        <button type="submit" class="button"><i></i>Cadastrar</button></div>
                     {% with messages = get_flashed_messages() %}
                     {% if messages %}
                     <ul class="flashes">
