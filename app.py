@@ -1,3 +1,4 @@
+import serverless_wsgi
 import requests
 from flask import Flask, render_template, request, url_for, flash, redirect
 from datetime import datetime, timedelta
@@ -50,10 +51,11 @@ def cadastro():
             flash("Analisamos que você ainda não tem idade mínima permitida, e por isso não podemos prosseguir com seu cadastro.")
     return render_template("conta.html")
 
-if __name__ == "__main__":
-    app.run(debug=True)
-    
-    clientes = [
-        {"nome": "", "cpf": "", "data": "", "celular": ""},
-        {"nome": "", "cpf": "", "data": "", "celular": ""},
-    ]
+#if __name__ == "__main__":
+ #   app.run(debug=True)   
+  #  clientes = [
+   #     {"nome": "", "cpf": "", "data": "", "celular": ""},
+    #    {"nome": "", "cpf": "", "data": "", "celular": ""},
+    #]
+def handler(event, context):
+    return serverless_wsgi.handle_request(app, event, context)
