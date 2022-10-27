@@ -7,7 +7,7 @@ import json
 with open('dados.json') as jsonfile:
     clientes = json.load(jsonfile)
 
-app = Flask(__name__)
+app = Flask(__name__,static_url_path='/static', static_folder='static')
 app.config["SECRET_KEY"] = "key_secret"
 
 @app.route("/")
