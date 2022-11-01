@@ -1,3 +1,4 @@
 Flask
 serverless-wsgi
 requests
+flask_s3
