@@ -9,6 +9,9 @@ with open('dados.json') as jsonfile:
 
 app = Flask(__name__,static_url_path='/static', static_folder='static')
 app.config["SECRET_KEY"] = "key_secret"
+app.config['FLASKS3_BUCKET_NAME'] = 'bucket-storage' 
+s3 = FlaskS3() 
+s3.init_app(app)
 
 @app.route("/")
 def homepage():
