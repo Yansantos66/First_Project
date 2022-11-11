@@ -36,25 +36,29 @@ def cadastro():
             if cliente["cpf"] == cpfcliente or cliente["celular"] == celcliente:
                 flash("Cliente já cadastrado")
                 return render_template("conta.html")
-        
-        if idade_permitida:
-            clientes.append(
-                {
-                    "nome": ncliente,
-                    "cpf": cpfcliente,
-                    "data": datcliente,
-                    "celular": celcliente,
-                }
-            )
-
-            with open('dados.json', 'w') as jsonadd:
-                json.dump(clientes, jsonadd, indent=4)
-
+                #if idade_permitida:
+def put_user(ncliente, cpfcliente, datcliente, celcliente, dynamodb=None):
+    if not dynamodb:
+        dynamodb = boto3.resource(
+        'dynamodb')
+ 
+        table = dynamodb.Table('Users')
+        response = table.put_item(
+        Item={
+            'nome': ncliente,
+            'cpf': cpfcliente,
+            'data': datcliente,
+            'celular': celcliente
+           }
+        )  
+        return response
             flash("Cliente cadastrado com sucesso. Agora você faz parte do time PagBank PagSeguro!")
         else:
             flash("Analisamos que você ainda não tem idade mínima permitida, e por isso não podemos prosseguir com seu cadastro.")
     return render_template("conta.html")
 
+if __name__ == "__main__":
+    app.run(debug=True)
 #if __name__ == "__main__":
  #   app.run(debug=True)   
   #  clientes = [
