@@ -1,6 +1,4 @@
-FROM public.ecr.aws/lambda/python:3.8
-WORKDIR /app 
-COPY . /app
-RUN pip3 install -r requirements.txt 
-
-CMD ["app.handler"]
+FROM public.ecr.aws/lambda/python:3.9
+COPY requirements.txt ./
+RUN pip install -r requirements.txt
+ADD ./ ${LAMBDA_TASK_ROOT}

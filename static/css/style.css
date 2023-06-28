@@ -40,7 +40,7 @@ html, body{
     color: black;
     min-width: 60px;
     font-size: 40px;
-    background: linear-gradient(90deg,#a4f2f5,#c4f78a);
+    background: linear-gradient(190deg,#48f4fa,#a7f84a);
 }
 .log{
     text-align: center;
@@ -63,7 +63,7 @@ html, body{
     font-size: 40px; 
     max-width: none;
     width: auto;
-    background: linear-gradient(#e2f582,#80f0f8);
+    background: linear-gradient(200deg,#48f4fa,#a7f84a);
 }
 .logpb{
     text-align: center;
@@ -76,4 +76,9 @@ html, body{
     padding-top: 60px;
     cursor: pointer;
     text-align: center;
+}
+@media screen and (max-width: 1640px){
+    .head {
+        flex-direction: column;
+    }
 }

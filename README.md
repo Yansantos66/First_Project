@@ -1,0 +1,1 @@
+Este projeto constituiu um desafio significativo que foi apresentado com o propósito de impulsionar meu crescimento e aprimoramento no campo do desenvolvimento. É com imenso prazer que compartilho minha primeira aplicação, utilizando Python, HTML, CSS, Docker e serviços de Infraestrutura da AWS (ECR, Lambda, Amazon S3, DynamoDB e Amazon API Gateway). 
